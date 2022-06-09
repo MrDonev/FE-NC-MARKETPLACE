@@ -1,33 +1,45 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 const allItemsAPI = axios.create({
   baseURL: "https://nc-marketplace-app.herokuapp.com/api/",
 });
-const Items = ({ option }) => {
+const Items = () => {
+  const {category}=useParams()
+  const [loading, setLoading]=useState(true);
   const [listOfAllItems, setListOfAllItems] = useState([]);
   useEffect(() => {
-    allItemsAPI.get("/items").then((res) => {
+    allItemsAPI.get("/items",{
+      params:{
+        category_name: category,
+      }
+    }).then((res) => {
       setListOfAllItems(res.data.items);
     });
-  }, []);
-  console.log(option);
+
+  }, [category]);
+ 
   return (
     <section className="Main">
-      {!listOfAllItems.length ? (
-        <></>
-      ) : (
+      {(!listOfAllItems.length && loading===true)? (
+        <p>...Loading</p>
+      ) :(
         <ul className="allItemsList">
           {listOfAllItems.map((item) => {
             return (
-              <div key={item.item_name}>
+              <div key={item.item_name} className='itemCard'>
+                <section className="itemImage">
                 <img src={item.img_url} alt="item_image" />
-                <p>Item:{item.item_name}</p>
-                <p>Description:{item.description}</p>
-                <p>Price: {item.price}</p>
-                <p>category:{item.category_name}</p>
+                </section>
+                <section className="itemText">
+                <p>Item:   {item.item_name}</p>
+                <p>Description:   {item.description}</p>
+                <p>Price:   {item.price} £</p>
+                <p>Category:   {item.category_name}</p>
                 <section className="buttonSection">
-                  <button onclick="">Add to basket</button>
-                  <button>Purchase</button>
+                  <button >Add to basket</button>
+                  <button >Purchase</button>
+                </section>
                 </section>
               </div>
             );
