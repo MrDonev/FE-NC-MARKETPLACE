@@ -55,7 +55,7 @@ background-color: rgb(196, 221, 243);
   border-radius: 0.6em;
 }
 .buttonSection > button:hover {
-  box-shadow: 0 0.2em 0.1em 0.1em rgb(250, 176, 39);
+  box-shadow: 0 0.1em 0.5em 0.05em rgb(250, 176, 39);
 }
 .App {
   display: grid;
@@ -84,21 +84,27 @@ background-color: rgb(196, 221, 243);
     rgba(156, 156, 156, 1) 100%
   );
 }
+#basket{
+ width: 3em;
+ border-radius: 100%;
+ margin-right: 2em;
+}
+#profile{
+  width: 3em;
+  border-radius: 100%;
+}
+#home{
+  width:2.7em;
+  border-radius: 100%;
+  margin-left: 2em;
+}
 .Header>h1{
   text-align: center;
   font-size: 2rem;
   font-family: 'Acme', sans-serif;
 font-style: oblique;
 }
-.headerLinks > a {
-  margin: 0.4em;
-  width: 4em;
-  padding: 0.5em;
-  font-size: 1.3rem;
-  color: rgb(100, 100, 100);
-  border-radius: 1em;
-  background-color: rgb(202, 202, 202);
-}
+
 .Nav {
   grid-area: Nav;
   width: 17vw;
