@@ -1471,8 +1471,8 @@
             "parentId": "page",
             "childIndex": 42,
             "point": [
-              632.91,
-              264.14
+              641.91,
+              257.14
             ],
             "rotation": 0,
             "bend": 0.000026585726547002666,
@@ -1484,8 +1484,7 @@
                   0,
                   0
                 ],
-                "canBind": true,
-                "bindingId": "daa5a679-c4cf-4fe6-32e4-0e15abc88069"
+                "canBind": true
               },
               "end": {
                 "id": "end",
@@ -1973,18 +1972,6 @@
             "type": "arrow",
             "fromId": "04a31d00-7f9c-458f-08e9-8bbb7e34f570",
             "toId": "2beeada5-8f60-4184-212d-30d60cfe4d3f",
-            "handleId": "start",
-            "point": [
-              0.5,
-              0.5
-            ],
-            "distance": 8
-          },
-          "daa5a679-c4cf-4fe6-32e4-0e15abc88069": {
-            "id": "daa5a679-c4cf-4fe6-32e4-0e15abc88069",
-            "type": "arrow",
-            "fromId": "3a5708d5-1675-418b-2358-fa32356bf38a",
-            "toId": "d8b14cc1-784b-428d-2ecb-652eb7e7fa17",
             "handleId": "start",
             "point": [
               0.5,
