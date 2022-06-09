@@ -295,11 +295,11 @@
             "childIndex": 12,
             "point": [
               264.4,
-              374.3
+              486.77
             ],
             "size": [
-              192.22,
-              214.39
+              196.67,
+              224.91
             ],
             "rotation": 0,
             "style": {
@@ -322,8 +322,8 @@
             "parentId": "page",
             "childIndex": 13,
             "point": [
-              282.96,
-              427.75
+              285.25,
+              587.93
             ],
             "rotation": 0,
             "text": "review previous \norders",
@@ -1755,6 +1755,106 @@
             ],
             "rotation": 0,
             "text": "add to basket",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "fb0156b8-e5ad-45c5-2429-9dc4df034cbb": {
+            "id": "fb0156b8-e5ad-45c5-2429-9dc4df034cbb",
+            "type": "rectangle",
+            "name": "Rectangle",
+            "parentId": "page",
+            "childIndex": 69,
+            "point": [
+              274.88,
+              357.29
+            ],
+            "size": [
+              182.87,
+              35.93
+            ],
+            "rotation": 0,
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            },
+            "label": "",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
+          },
+          "40b6ba29-9cd1-4f01-069d-b1a1e68818a4": {
+            "id": "40b6ba29-9cd1-4f01-069d-b1a1e68818a4",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 70,
+            "point": [
+              301.94,
+              355.93
+            ],
+            "rotation": 0,
+            "text": "list an item",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "062b0df1-d1f0-41b5-31ee-e63060c11675": {
+            "id": "062b0df1-d1f0-41b5-31ee-e63060c11675",
+            "type": "rectangle",
+            "name": "Rectangle",
+            "parentId": "page",
+            "childIndex": 71,
+            "point": [
+              277.03,
+              410.03
+            ],
+            "size": [
+              187.79,
+              37.9
+            ],
+            "rotation": 0,
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            },
+            "label": "",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
+          },
+          "de0f1ecc-6523-4f0f-380b-2f7e928557a8": {
+            "id": "de0f1ecc-6523-4f0f-380b-2f7e928557a8",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 72,
+            "point": [
+              293.5,
+              410.27
+            ],
+            "rotation": 0,
+            "text": "remove listing",
             "style": {
               "color": "black",
               "size": "small",
