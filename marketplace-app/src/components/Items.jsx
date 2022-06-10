@@ -1,7 +1,7 @@
-import { useState, useEffect, useContext } from "react";
-import { useParams } from "react-router-dom";
-import { UserContext } from "../Assets/usercontext";
-import { addToBasket, database } from "../Assets/api";
+import { useState, useEffect, useContext } from 'react';
+import { useParams } from 'react-router-dom';
+import { UserContext } from '../Assets/usercontext';
+import { addToBasket, database, removeItem } from '../Assets/api';
 
 const Items = () => {
   const user = useContext(UserContext);
@@ -10,7 +10,7 @@ const Items = () => {
   const [listOfAllItems, setListOfAllItems] = useState([]);
   useEffect(() => {
     database
-      .get("/items", {
+      .get('/items', {
         params: {
           category_name: category,
         },
@@ -18,13 +18,21 @@ const Items = () => {
       .then((res) => {
         setListOfAllItems(res.data.items);
       });
-  }, [category]);
+  }, [category,listOfAllItems]);
   const addItemToBasket = (username, item_id) => {
     addToBasket(item_id, username).then((newItem) => {
       console.log(newItem);
     });
   };
-
+  function removeListing(item_id) {
+    removeItem(item_id)
+      .then((deletedItem) => {
+      setListOfAllItems(listOfAllItems)
+      })
+      .catch((err) => {
+        console.dir(err);
+      });
+  }
   return (
     <section className="Main">
       {!listOfAllItems.length && loading === true ? (
@@ -51,6 +59,13 @@ const Items = () => {
                       Add to basket
                     </button>
                     <button>Purchase</button>
+                    <button
+                      onClick={() => {
+                        removeListing(item.item_id);
+                      }}
+                    >
+                      Remove
+                    </button>
                   </section>
                 </section>
               </div>

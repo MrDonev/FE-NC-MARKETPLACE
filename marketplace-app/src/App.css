@@ -116,7 +116,7 @@ font-style: oblique;
 
 .Nav {
   grid-area: Nav;
-  width: 17vw;
+  width: 15.5vw;
   margin-top:0.5em;
   display: block;
   background: rgb(79, 79, 79);
@@ -173,6 +173,7 @@ font-style: oblique;
   background-color: rgb(202, 202, 202);
   font-size: larger;
   box-shadow: 0 0.1em 0.1em 0.1em rgb(122, 122, 122);
+  border-radius: 1em;
 }
 .headerLinks {
   display: flex;

@@ -17,6 +17,7 @@ const Nav = () => {
           <Link to="/Clothing">Clothing</Link>
           <Link to="/Household">Household</Link>
           <Link to="/listItem">ListItem</Link>
+          <Link to='/orders'>Orders</Link>
         </section>
         <section></section>
       </section>

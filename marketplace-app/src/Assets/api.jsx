@@ -23,7 +23,23 @@ export const addToBasket = (item_id, username) => {
 
 export const deleteFromBasket = (item_id, username) => {
   return database.delete(`users/${username}/basket/${item_id}`).then((res) => {
-    console.log(res);
     return res.data;
   });
 };
+
+export const listNewItem = (item_name,description,img_url,price,category_name)=>{
+return database.post(`items`,{item_name,description,img_url,price,category_name}).then((res)=>{
+  return res.data
+})
+}
+export const removeItem=(item_id)=>{
+  return database.delete(`items/${item_id}`).then((res)=>{
+    return res.data;
+  })
+}
+
+export const getOrders=(username)=>{
+  return database.get(`/users/${username}/orders`).then((res)=>{
+    return res.data
+  })
+}
