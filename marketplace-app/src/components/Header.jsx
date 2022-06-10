@@ -4,7 +4,7 @@ import ProfileIcon from "../Assets/profile.png";
 import HomeIcon from "../Assets/home.png";
 import { useContext } from "react";
 import { UserContext } from "../Assets/usercontext";
-import User from './user'
+import User from "./user";
 const Header = () => {
   const user = useContext(UserContext);
   return (
@@ -20,7 +20,7 @@ const Header = () => {
         <Link to={"/basket"}>
           <img id="basket" src={BasketIcon} alt="basket" />
         </Link>
-       <User/>
+        <User />
       </section>
     </section>
   );

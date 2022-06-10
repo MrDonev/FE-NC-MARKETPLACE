@@ -8,6 +8,7 @@ import Basket from "./components/Basket";
 import Users from "./components/users";
 import { UserContext } from "./Assets/usercontext";
 import { useState } from "react";
+import ListItem from "./components/ListItem";
 
 function App() {
   const [user, setUser] = useState({});
@@ -23,6 +24,7 @@ function App() {
             <Route path="/basket" element={<Basket />} />
             <Route path="/:category" element={<Items />} />
             <Route path="/users" element={<Users />} />
+            <Route path="/listItem" element={<ListItem />} />
           </Routes>
         </section>
       </UserContext.Provider>

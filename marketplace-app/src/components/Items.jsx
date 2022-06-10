@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-
-import { database } from "../Assets/api";
+import { UserContext } from "../Assets/usercontext";
+import { addToBasket, database } from "../Assets/api";
 
 const Items = () => {
+  const user = useContext(UserContext);
   const { category } = useParams();
   const [loading, setLoading] = useState(true);
   const [listOfAllItems, setListOfAllItems] = useState([]);
@@ -18,6 +19,11 @@ const Items = () => {
         setListOfAllItems(res.data.items);
       });
   }, [category]);
+  const addItemToBasket = (username, item_id) => {
+    addToBasket(item_id, username).then((newItem) => {
+      console.log(newItem);
+    });
+  };
 
   return (
     <section className="Main">
@@ -37,7 +43,13 @@ const Items = () => {
                   <p>Price: {item.price} £</p>
                   <p>Category: {item.category_name}</p>
                   <section className="buttonSection">
-                    <button>Add to basket</button>
+                    <button
+                      onClick={() => {
+                        addItemToBasket(user.user.username, item.item_id);
+                      }}
+                    >
+                      Add to basket
+                    </button>
                     <button>Purchase</button>
                   </section>
                 </section>
