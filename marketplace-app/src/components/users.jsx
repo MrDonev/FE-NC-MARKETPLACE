@@ -2,6 +2,7 @@ import { database } from "../Assets/api";
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../Assets/usercontext";
+import Kudos from "./kudos";
 
 const Users = () => {
   const { username } = useParams();
@@ -28,21 +29,20 @@ const Users = () => {
             return (
               <div key={userData.username} className="itemCard">
                 <section className="itemImage">
-                  <img src={userData.avatar_url} alt="user_image" />
+                  <img src={userData.avatar_url} alt={userData.username} />
                 </section>
                 <section className="itemText">
-                  <p>username: {userData.username}</p>
+                  <p>Username: {userData.username}</p>
                   <p>kudos: {userData.kudos} </p>
                 </section>
                 <button
                   onClick={() => {
                     setUser(userData);
-                    console.log(user);
                   }}
                 >
                   Select This User
                 </button>
-                <button>Give Kudos</button>
+                <Kudos kudosCount={userData.kudos} name={userData.username}/>
               </div>
             );
           })}
