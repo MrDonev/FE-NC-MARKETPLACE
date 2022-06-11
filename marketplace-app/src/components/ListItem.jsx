@@ -1,8 +1,10 @@
 import { listNewItem } from '../Assets/api';
 import { useState } from 'react';
+
 const ListItem = () => {
   const [isItemAdded, setIsItemAdded] = useState(false);
   const [itemAdded, setItemAdded] = useState({});
+
   function addListing(formObject) {
     const item_name = formObject[0].value;
     const description = formObject[1].value;
@@ -19,6 +21,7 @@ const ListItem = () => {
         console.dir(err);
       });
   }
+  
   return isItemAdded === true ? (
     <div key={itemAdded.item.item_name} className="itemCard">
       <section className="itemImage">

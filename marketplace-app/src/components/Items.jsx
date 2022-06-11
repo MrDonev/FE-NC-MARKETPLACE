@@ -8,6 +8,7 @@ const Items = () => {
   const { category } = useParams();
   const [loading, setLoading] = useState(true);
   const [listOfAllItems, setListOfAllItems] = useState([]);
+
   useEffect(() => {
     database
       .get('/items', {
@@ -16,6 +17,7 @@ const Items = () => {
         },
       })
       .then((res) => {
+        setLoading(false)
         setListOfAllItems(res.data.items);
       });
   }, [category,listOfAllItems]);
@@ -24,6 +26,7 @@ const Items = () => {
       console.log(newItem);
     });
   };
+
   function removeListing(item_id) {
     removeItem(item_id)
       .then((deletedItem) => {
@@ -36,7 +39,7 @@ const Items = () => {
   return (
     <section className="Main">
       {!listOfAllItems.length && loading === true ? (
-        <p>...Loading</p>
+        <p className='loading'>...Loading</p>
       ) : (
         <ul className="allItemsList">
           {listOfAllItems.map((item) => {
@@ -53,15 +56,15 @@ const Items = () => {
                   <section className="buttonSection">
                     <button
                       onClick={() => {
-                        addItemToBasket(user.user.username, item.item_id);
+                        if(window.confirm(`${item.item_name} added to basket!`)) addItemToBasket(user.user.username, item.item_id);
                       }}
                     >
                       Add to basket
                     </button>
                     <button>Purchase</button>
                     <button
-                      onClick={() => {
-                        removeListing(item.item_id);
+                      onClick={() => { 
+                        if(window.confirm(`${item.item_name} added to basket!`)) removeListing(item.item_id);
                       }}
                     >
                       Remove

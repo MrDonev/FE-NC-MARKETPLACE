@@ -1,7 +1,6 @@
-import { Link, useParams } from "react-router-dom";
-import { useState, useContext, useEffect } from "react";
-import { UserContext } from "../Assets/usercontext";
-import { deleteFromBasket, getBasket } from "../Assets/api";
+import { useState, useContext, useEffect } from 'react';
+import { UserContext } from '../Assets/usercontext';
+import { deleteFromBasket, getBasket } from '../Assets/api';
 
 const Basket = () => {
   const [basket, setBasket] = useState([]);
@@ -22,8 +21,11 @@ const Basket = () => {
   };
 
   return !basket.length ? (
-    <p>No items in the basket</p>
+    <section className="Basket">
+      <p>No items in the basket</p>
+    </section>
   ) : (
+    <section className='Main'>
     <ul className="allItemsList">
       {basket.map((item) => {
         return (
@@ -41,6 +43,7 @@ const Basket = () => {
                 <button
                   onClick={() => {
                     removeItemFromBasket(user.user.username, item.item_id);
+                    alert(`${item.item_name} removed from basket!`)
                   }}
                 >
                   Remove
@@ -51,6 +54,7 @@ const Basket = () => {
         );
       })}
     </ul>
+    </section>
   );
 };
 

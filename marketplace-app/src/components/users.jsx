@@ -22,7 +22,7 @@ const Users = () => {
   return (
     <section className="Main">
       {!allUsers.length ? (
-        <p>...Loading</p>
+        <p className="loading">...Loading</p>
       ) : (
         <ul className="allItemsList">
           {allUsers.map((userData) => {
