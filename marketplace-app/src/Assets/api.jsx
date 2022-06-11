@@ -39,7 +39,13 @@ export const removeItem=(item_id)=>{
 }
 
 export const getOrders=(username)=>{
-  return database.get(`/users/${username}/orders`).then((res)=>{
+  return database.get(`users/${username}/orders`).then((res)=>{
+    return res.data
+  })
+}
+
+export const purchaseItem=(username,item_id)=>{
+  return database.post(`users/${username}/orders`,{ item_id }).then((res)=>{
     return res.data
   })
 }

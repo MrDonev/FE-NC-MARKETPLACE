@@ -6,18 +6,17 @@ const Orders = () => {
   const user = useContext(UserContext);
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    console.log(`in useffect`);
     if (user.user.username) {
       getOrders(user.user.username).then((orders) => {
         setOrders(orders.items);
       });
     }
   }, []);
-  console.log(`in orders`);
+
   return (
     <section className="Main">
       {!orders.length ? (
-        <p>...Loading</p>
+        <p className='loading'>...Loading previous orders</p>
       ) : (
         <ul className="allItemsList">
           {orders.map((item) => {
